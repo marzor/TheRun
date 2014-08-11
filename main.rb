@@ -15,4 +15,4 @@ class Main
 
 end
 
-Shoes.app(title: "#Yolo", width: 500, height: 300)
+Shoes.app(title: "#Yolo", fullscreen: true)

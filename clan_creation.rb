@@ -8,16 +8,21 @@ class ClanCreation < Shoes
     title("Clan Name", align: "left", font: "Starcraft", margin: 10)
     
     stack(margin: 20) do
-      flow do
-        @clanname = edit_line 
-        button("Save and Continue", left: 210).click do
-          Main.instance.clan = Clan.new(@clanname.text)
-          visit '/intro'
-          close()
-        end
+      flow(margin: 20) do
+        @clanname = edit_line
+        para(
+          link("Save and Continue", left: 210, stroke: black, underline: false) do
+            Main.instance.clan = Clan.new(@clanname.text)
+            visit '/intro'
+          end
+          )
       end
-      button("Back",width: 60, height: 30).click do
-        visit '/'
+      flow() do
+        para(
+          link("Back",width: 60, height: 30, stroke: black, underline: false) do
+            visit '/'
+          end
+        )
       end
     end 
   end
